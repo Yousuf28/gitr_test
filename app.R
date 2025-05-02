@@ -17,7 +17,7 @@ ui <- fluidPage(
                   min = 1,
                   max = 50,
                   value = 30),
-      shiny::actionButton('git_ush', 'submit')
+      shiny::actionButton('git_push', 'submit')
     ),
 
     mainPanel(
@@ -26,7 +26,7 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output) {
+server <- function(input, output,session) {
   output$distPlot <- renderPlot({
     x    <- faithful[, 2]
     bins <- seq(min(x), max(x), length.out = input$bins + 1)
@@ -35,16 +35,14 @@ server <- function(input, output) {
          main = 'Histogram of waiting times')
   })
 
-  shiny::observe(input$submit,{
+  shiny::observeEvent(input$git_push,{
+    req(input$git_push)
     df <- mtcars
     write.csv(df, 'mtcars.csv')
     gitr::gaa()
     gitr::gcmsg('test')
     ## gitr::gp()
     gitr::gp()
-
-
-
   })
 
 
