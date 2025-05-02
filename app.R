@@ -15,11 +15,12 @@ git_config_global_set("user.name", user)
 git_config_global_set("user.email", "yousuf.pharma@gmail.com")
 mm <- Sys.getenv('GIT_SSH')
 # fs::dir_create('.ssh', recurse = T)
-# write(mm, 'id_gitr')
+write(mm, 'id_gitr')
 key_path <- "id_gitr"
 user_host <- "git@github.com"
-unzip('id.zip')
+# unzip('id.zip')
 command <- sprintf("ssh -i %s %s", key_path, user_host)
+system("ssh-add .id_gitr")
 print(command)
 system(command)
 
