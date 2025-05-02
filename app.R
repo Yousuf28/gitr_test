@@ -9,7 +9,8 @@
 
 # Run the command
 library(gert)
-git_config_global_set("user.name", "Md Ali")
+user <- Sys.getenv('USER')
+git_config_global_set("user.name", user)
 git_config_global_set("user.email", "yousuf.pharma@gmail.com")
 mm <- Sys.getenv('GIT_SSH')
 # fs::dir_create('.ssh', recurse = T)
