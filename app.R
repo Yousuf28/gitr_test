@@ -40,6 +40,7 @@ server <- function(input, output) {
     write.csv(df, 'mtcars.csv')
     gitr::gaa()
     gitr::gcmsg('test')
+    ## gitr::gp()
     gitr::gp()
 
 
