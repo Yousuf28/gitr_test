@@ -20,7 +20,9 @@ key_path <- "id_gitr"
 user_host <- "git@github.com"
 # unzip('id.zip')
 command <- sprintf("ssh -i %s %s", key_path, user_host)
-system("ssh-add .id_gitr")
+system("ssh -F config -T git@github.com")
+
+# system("ssh-add .id_gitr")
 print(command)
 system(command)
 
