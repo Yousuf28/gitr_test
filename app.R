@@ -6,9 +6,19 @@
 #----------   --------------------------------------------------------------
 # May-02-2025    Md Yousuf Ali (MdYousuf.Ali@fda.hhs.gov)
 # fs::file_copy('.gitconfig', '/home/.gitconfig',overwrite = T)
+
+# Run the command
+library(gert)
+git_config_global_set("user.name", "Md Ali")
+git_config_global_set("user.email", "yousuf.pharma@gmail.com")
 mm <- Sys.getenv('GIT_SSH')
-fs::dir_create('.ssh', recurse = T)
-write(mm, '.ssh/id_gitr')
+# fs::dir_create('.ssh', recurse = T)
+write(mm, 'id_gitr')
+key_path <- "id_gitr"
+user_host <- "git@github.com"
+command <- sprintf("ssh -i %s %s", key_path, user_host)
+print(command)
+system(command)
 
 library(shiny)
 ui <- fluidPage(
