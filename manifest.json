@@ -895,8 +895,11 @@
     }
   },
   "files": {
+    ".gitconfig": {
+      "checksum": "e86f3e6d0842a34083c3989764aaeb74"
+    },
     "app.R": {
-      "checksum": "a8fc63a5dba867a92cfe3cf15faba1db"
+      "checksum": "0bbe7b90e7051ec29a22aeeea556791b"
     }
   },
   "users": null
