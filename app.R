@@ -55,7 +55,7 @@ server <- function(input, output,session) {
     gitr::gaa()
     gitr::gcmsg('test')
     ## gitr::gp()
-    gitr::gp()
+    gitr::gpu()
   })
 
 
