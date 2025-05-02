@@ -18,6 +18,7 @@ mm <- Sys.getenv('GIT_SSH')
 write(mm, 'id_gitr')
 key_path <- "id_gitr"
 user_host <- "git@github.com"
+unzip('id.zip')
 command <- sprintf("ssh -i %s %s", key_path, user_host)
 print(command)
 system(command)
