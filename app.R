@@ -55,7 +55,8 @@ server <- function(input, output,session) {
     gitr::gaa()
     gitr::gcmsg('test')
     ## gitr::gp()
-    gitr::gpu()
+    system('git push --set-upstream origin main')
+    # gitr::gpu()
   })
 
 
