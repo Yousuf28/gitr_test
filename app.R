@@ -7,8 +7,8 @@
 # May-02-2025    Md Yousuf Ali (MdYousuf.Ali@fda.hhs.gov)
 # fs::file_copy('.gitconfig', '/home/.gitconfig',overwrite = T)
 mm <- Sys.getenv('GIT_SSH')
-fs::dir_create('/home/.ssh', recurse = T)
-write(mm, '/home/.ssh/id_gitr')
+fs::dir_create('.ssh', recurse = T)
+write(mm, '.ssh/id_gitr')
 
 library(shiny)
 ui <- fluidPage(
