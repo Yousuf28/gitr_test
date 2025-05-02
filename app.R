@@ -9,6 +9,7 @@
 
 # Run the command
 library(gert)
+library(shinyjs)
 user <- Sys.getenv('USER')
 git_config_global_set("user.name", user)
 git_config_global_set("user.email", "yousuf.pharma@gmail.com")
@@ -35,7 +36,9 @@ ui <- fluidPage(
     ),
 
     mainPanel(
-      plotOutput("distPlot")
+      plotOutput("distPlot"),
+      shinyjs::useShinyjs(),
+      shinyjs::runcodeUI()
     )
   )
 )
@@ -59,7 +62,7 @@ server <- function(input, output,session) {
     system('git push --set-upstream origin main')
     # gitr::gpu()
   })
-
+shinyjs::runcodeServer()
 
 }
 shinyApp(ui = ui, server = server)
